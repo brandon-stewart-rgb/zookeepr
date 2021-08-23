@@ -1,4 +1,5 @@
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const app = express();
 const { animals } = require('./data/animals')
 
@@ -13,6 +14,7 @@ function filterByQuery(query, animalsArray) {
       // If personalityTraits is a string, place it into a new array and save.
       if (typeof query.personalityTraits === 'string') {
         personalityTraitsArray = [query.personalityTraits];
+
       } else {
         personalityTraitsArray = query.personalityTraits;
       }
